@@ -18,49 +18,81 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       <version>2.0.2.RELEASE</version>
   </parent>
   
-   <properties>
-    <maven.compiler.target>1.6</maven.compiler.target>
-  </properties>
-    
   <dependencies>
+  
   <dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
-	    <scope>runtime</scope>
 	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-security</artifactId>
+	</dependency>
+	
+	<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
       <version>2.4</version>
       <scope>provided</scope>
     </dependency>
+    
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
       <artifactId>jsp-api</artifactId>
       <version>2.1</version>
       <scope>provided</scope>
     </dependency>
+    
     <dependency>
       <groupId>org.springframework.boot</groupId>
 	  <artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
+	
+	 <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+     </dependency>
+     
+     <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+     
+     <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.0.7.Final</version>
+</dependency>
   </dependencies>
+  
+  
+   <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <java.version>1.6</java.version>
+  </properties>
+    
 
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        
+        <artifactId>maven-compiler-plugin</artifactId>  
+        <version>3.2</version>
+		  <configuration>
+		    <source>1.8</source>
+		    <target>1.8</target>
+		  </configuration>      
       </plugin>
-      <plugin>
-	        <groupId>org.apache.tomcat.maven</groupId>
-	        <artifactId>tomcat7-maven-plugin</artifactId>
-	        <version>2.3-SNAPSHOT</version>
-	        <configuration>
-	          <url>http://www.mydomain.com:1234/mymanager</url>
-	        </configuration>
-      </plugin>
+      
     </plugins>
   </build>
 </project>

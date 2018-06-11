@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping(value="/home", produces="mini_usos/json")
 public class PageController {
     @RequestMapping("/")
     @ResponseBody
     public String mainPage() {
-        return "Hello World!";
+        return "Hello world!";
     }
  
     @RequestMapping("/hello")
